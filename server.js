@@ -3,7 +3,7 @@ var fs = require('fs'),
     https = require('https'),
     express = require('express');
 var path = require('path');
-var port = 443;
+const port = process.env.PORT || 3000;
 
 var options = {
     key: fs.readFileSync('./privkey.pem'),
@@ -12,7 +12,7 @@ var options = {
 
 var app = express();
 
-var server = https.createServer(options, app).listen(port, function(){
+var server = http.createServer(options, app).listen(port, function(){
   console.log("Express server listening on port " + port);
 });
 
