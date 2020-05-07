@@ -1680,6 +1680,7 @@ export default class Exchange extends React.Component {
                 console.log("tokenToEthSwapInput",amountOfDai,mineth,deadline)
 
 
+                mineth = Math.trunc(mineth)
                 let amountOfChange = parseFloat(webToUse.utils.fromWei(""+mineth,'ether'))
                 console.log("ETH should change by ",amountOfChange)
 
